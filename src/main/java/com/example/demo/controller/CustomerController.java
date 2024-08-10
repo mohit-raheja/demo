@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/customers")
-@CrossOrigin(origins = "http://localhost:3000")
 public class CustomerController {
 
     @Autowired
@@ -23,10 +22,5 @@ public class CustomerController {
     @GetMapping
     public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
-    }
-
-    @GetMapping("/{id}")
-    public Customer getCustomerById(@PathVariable Long id) {
-        return customerService.getCustomerById(id).orElse(null);
     }
 }

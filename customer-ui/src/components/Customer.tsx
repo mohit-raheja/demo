@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './../App.css';
 
 interface CustomerProps {
     onAddCustomer: (customer: { firstName: string; lastName: string; dob: string }) => void;
@@ -26,6 +27,7 @@ const Customer: React.FC<CustomerProps> = ({ onAddCustomer }) => {
                     id="firstName"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="Enter First Name"
                     required
                 />
             </div>
@@ -36,6 +38,7 @@ const Customer: React.FC<CustomerProps> = ({ onAddCustomer }) => {
                     id="lastName"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Enter Last Name"
                     required
                 />
             </div>
